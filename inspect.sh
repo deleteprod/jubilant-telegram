@@ -43,3 +43,11 @@ printf "This machine has $cpu_cores cores available.\n"
 # test for disk IO
 
 # test for CPU utilisation levels
+
+# check for presence of UF and Splunk on same box
+
+# check for presence of Spartacus
+
+# check for permissions on Splunk
+
+# check splunk version
