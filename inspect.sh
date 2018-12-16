@@ -36,3 +36,10 @@ printf "This machine has $cpu_cores cores available.\n"
 
 # test for presence of ethtool for network speed checks
 ...
+# test for firewall blockages on Splunk's ports
+
+# test for ulimits & THP
+
+# test for disk IO
+
+# test for CPU utilisation levels
