@@ -1,11 +1,11 @@
 #!/bin/bash
 clear
 echo
-echo "##################################################"
-echo "# Splunk environment tester script for GNU/Linux #"
-echo "# Bult to check for any obvious problems in your #"
-echo "# environment and provide remedial guidance.     #"
-echo "##################################################"
+echo "###################################################"
+echo "# Splunk environment tester script for GNU/Linux  #"
+echo "# Built to check for any obvious problems in your #"
+echo "# environment and provide remedial guidance.      #"
+echo "###################################################"
 echo
 
 # Check for OS versions
