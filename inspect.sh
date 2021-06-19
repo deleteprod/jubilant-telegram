@@ -32,10 +32,11 @@ printf "This machine has $memory_kb KB of memory\n"
 if [ "$memory_kb" -lt 16777216 ]; then
     echo "At 16GB or less, you're not likely to have a good time with Splunk"
 elif
-   [ "$memory_kb" -gt 33554432 ] then
+   [ "$memory_kb" -gt 33554432 ]; then
     echo "At leat 32GB, now we're talking"
 else
     echo "Seems you're all good on memory dude"
+fi
 
 # Check for cpu cores count
 cpu_cores=$(cat /proc/cpuinfo | grep -c "^processor")
