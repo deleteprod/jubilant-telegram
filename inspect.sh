@@ -30,9 +30,17 @@ printf "This is $OS Linux, version $VER\n"
 memory_kb=$(cat /proc/meminfo | grep MemTotal: | awk '{print $2; }')
 printf "This machine has $memory_kb KB of memory\n"
 
-# Check for cpu cores
+# Check for cpu cores count
 cpu_cores=$(cat /proc/cpuinfo | grep -c "^processor")
+
+# Check for a minimum of 16
+if [ "$cpu_cores" -gt 16 ]; then
+    echo "At least 16 cores - this is good news"
+else
+    echo "Fewer than 16 cores - you are going to have a bad time"
+fi
 printf "This machine has $cpu_cores cores available.\n"
+
 
 # test for presence of ethtool for network speed checks
 
@@ -51,3 +59,10 @@ printf "This machine has $cpu_cores cores available.\n"
 # check for permissions on Splunk
 
 # check splunk version
+
+# Check for ES
+
+# Check for ITSI
+
+# Check for skipped searches by reason - may call out to Python script
+# that executes using creds from configparser
