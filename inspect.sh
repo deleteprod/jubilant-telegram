@@ -35,7 +35,7 @@ cpu_cores=$(cat /proc/cpuinfo | grep -c "^processor")
 printf "This machine has $cpu_cores cores available.\n"
 
 # test for presence of ethtool for network speed checks
-...
+
 # test for firewall blockages on Splunk's ports
 
 # test for ulimits & THP
