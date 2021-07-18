@@ -73,4 +73,4 @@ printf "This machine has $cpu_cores cores available.\n"
 # Check for ITSI
 
 # Check for skipped searches by reason - may call out to Python script
-# that executes using creds from configparser
+# that executes using creds from configparser or just scan splunkd.log
