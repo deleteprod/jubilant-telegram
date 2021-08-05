@@ -8,6 +8,11 @@ echo "# environment and provide remedial guidance.      #"
 echo "###################################################"
 echo
 
+# Enable logging
+exec 3>&1 4>&2
+trap 'exec 2>&4 1>&3' 0 1 2 3
+exec 1>../logging/jt.log 2>&1
+
 # Check for OS versions
 if [ -f /etc/os-release ]; then
         . /etc/os-release
