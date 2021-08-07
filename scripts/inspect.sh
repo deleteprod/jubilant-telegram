@@ -66,10 +66,21 @@ printf "This machine has $cpu_cores cores available.\n"
 
 
 # test for presence of ethtool for network speed checks
+ethtool_avail=$(which ethtool)
+
 
 # test for firewall blockages on Splunk's ports
+firewall_checks=$(iptables -L -n)
 
-# test for ulimits & THP
+# test for ulimits & THP - capture values
+process_limits=$(ulimit -u)
+file_handles=$(ulimit -n)
+
+ulimit -n 65535
+ulimit -S 20480
+ulimit -Hf unlimited
+ulimit -Sf unlimited
+
 
 # test for disk IO
 
@@ -80,8 +91,11 @@ printf "This machine has $cpu_cores cores available.\n"
 # check for presence of Spartacus
 
 # check for permissions on Splunk
+splunk_user=$(ps -eaf | grep splunkd)
 
 # check splunk version
+full_splunk_version=$(/opt/splunk/bin/splunk --version)
+splunk_forwarder_version=$(/opt/splunkforwarder/bin/splunk --version)
 
 # Check for ES
 
