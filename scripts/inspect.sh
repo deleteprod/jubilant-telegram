@@ -67,6 +67,7 @@ printf "This machine has $cpu_cores cores available.\n"
 
 # test for presence of ethtool for network speed checks
 ethtool_avail=$(which ethtool)
+interfaces_speeds=$(for i in $(netstat -i | cut -f1 -d" " | tail -n+3 | grep -v "lo"); do echo "$i: $(ethtool "$i" | grep Speed | sed 's/Speed://g')" ; done)
 
 
 # test for firewall blockages on Splunk's ports
